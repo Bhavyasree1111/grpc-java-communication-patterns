@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package employee;
+option java_multiple_files = true;
+option java_package = "com.example.employee";
+option java_outer_classname = "EmployeeServiceProto";
+
+service EmployeeService{
+  rpc GetEmployeeByName(GetEmployeeByNameRequest) returns (GetEmployeeByNameResponse);
+}
+
+message GetEmployeeByNameRequest{
+  string name = 1;
+}
+
+message GetEmployeeByNameResponse{
+  string name = 1;
+  string email = 2;
+  int32 phone =3;
+  string department = 4;
+}
